@@ -23,6 +23,13 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    # slang / extended
+    "hopeful",
+    "proud",
+    "vibing",
+    "slaps",
+    "hyped",
+    "blessed",
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +43,11 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    # slang / extended
+    "rough",
+    "destroyed",
+    "exhausted",
+    "drained",
 ]
 
 # ---------------------------------------------------------------------
@@ -50,6 +62,15 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    # --- added posts ---
+    "no cap this assignment slaps 😂",                          # slang + emoji
+    "I absolutely love sitting in traffic for two hours 🙃",    # sarcasm
+    "lowkey stressed but highkey proud of myself ngl",          # slang, mixed
+    "💀💀💀 that exam destroyed me",                            # emoji-heavy, negative
+    "not bad I guess",                                          # understated, ambiguous
+    "honestly could not care less at this point",               # negative/apathetic
+    "today was rough but my friends showed up for me 🥲",       # mixed, emotional
+    "vibing 😌",                                                # slang, minimal text
 ]
 
 # Human labels for each post above.
@@ -65,30 +86,14 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    # --- added labels ---
+    "positive",  # "no cap this assignment slaps 😂"             — slang for "this is great"
+    "negative",  # "I absolutely love sitting in traffic 🙃"     — sarcasm; true meaning is negative
+    "mixed",     # "lowkey stressed but highkey proud ngl"        — two competing emotions
+    "negative",  # "💀💀💀 that exam destroyed me"               — skull emoji = overwhelmed/negative
+    "neutral",   # "not bad I guess"                             — lukewarm, no strong signal
+    "negative",  # "honestly could not care less at this point"  — apathy / disengagement
+    "mixed",     # "today was rough but my friends showed up 🥲" — hard day softened by gratitude
+    "positive",  # "vibing 😌"                                   — chill/content, slang positive
 ]
 
-# TODO: Add 5-10 more posts and labels.
-#
-# Requirements:
-#   - For every new post you add to SAMPLE_POSTS, you must add one
-#     matching label to TRUE_LABELS.
-#   - SAMPLE_POSTS and TRUE_LABELS must always have the same length.
-#   - Include a variety of language styles, such as:
-#       * Slang ("lowkey", "highkey", "no cap")
-#       * Emojis (":)", ":(", "🥲", "😂", "💀")
-#       * Sarcasm ("I absolutely love getting stuck in traffic")
-#       * Ambiguous or mixed feelings
-#
-# Tips:
-#   - Try to create some examples that are hard to label even for you.
-#   - Make a note of any examples that you and a friend might disagree on.
-#     Those "edge cases" are interesting to inspect for both the rule based
-#     and ML models.
-#
-# Example of how you might extend the lists:
-#
-# SAMPLE_POSTS.append("Lowkey stressed but kind of proud of myself")
-# TRUE_LABELS.append("mixed")
-#
-# Remember to keep them aligned:
-#   len(SAMPLE_POSTS) == len(TRUE_LABELS)
